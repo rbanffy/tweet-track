@@ -128,6 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Secrets should not be under version control
+secrets.py
+
 # Temp files
 *~
 *#
