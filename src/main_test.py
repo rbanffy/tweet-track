@@ -12,13 +12,30 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import http
+
 import main
 
 
-def test_index():
+def test_root():
     main.app.testing = True
     client = main.app.test_client()
 
-    r = client.get('/')
+    r = client.get("/")
+    assert r.status_code == http.HTTPStatus.NOT_FOUND
+
+
+def test_person():
+    main.app.testing = True
+    client = main.app.test_client()
+
+    r = client.get("/v1/person/1234/info.json")
     assert r.status_code == 200
-    assert 'Hello World' in r.data.decode('utf-8')
+
+
+def test_id_on_service():
+    main.app.testing = True
+    client = main.app.test_client()
+
+    r = client.get("/v1/twitter/id/1234/info.json")
+    assert r.status_code == 200
