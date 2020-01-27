@@ -135,3 +135,6 @@ secrets.py
 *~
 *#
 .#*
+
+# Direnv config
+.envrc
