@@ -1,7 +1,7 @@
 """
 # Models
 
-Models using the Google App Engine datastore APIs.
+Models using the Google Firestore in Native mode.
 """
 
 
