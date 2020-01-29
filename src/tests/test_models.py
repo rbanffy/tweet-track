@@ -29,3 +29,8 @@ class TestEntity(unittest.TestCase):
         e = Entity.get_by_key(self.key)
         self.assertEqual(e.name, "Entity 1")
         self.assertEqual(e.description, "Entity 1's description")
+
+
+class TestAccount(unittest.TestCase):
+    ...
+    # TODO: write tests for Account methods
